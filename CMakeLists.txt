@@ -9,7 +9,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # --------- library with the logic ------------
-add_library(orderbook src/match.cpp)
+add_library(orderbook src/match.cpp src/order_book.cpp)
 target_include_directories(orderbook PUBLIC include)
 target_compile_options(orderbook PRIVATE -Wall -Wextra -Wpedantic -Werror)
 
@@ -28,7 +28,7 @@ FetchContent_MakeAvailable(googletest)
 
 #---------- Tests ------------
 enable_testing()
-add_executable(orderbook_tests tests/match_test.cpp)
+add_executable(orderbook_tests tests/match_test.cpp tests/order_book_test.cpp)
 target_link_libraries(orderbook_tests PRIVATE orderbook GTest::gtest_main)
 include(GoogleTest)
 gtest_discover_tests(orderbook_tests)
