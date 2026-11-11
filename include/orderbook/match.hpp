@@ -5,8 +5,8 @@ namespace orderbook {
 
 using Price = std::int64_t;
 
-// Devuelve true si un precio de compra (bid) y uno de venta (ask)
-// permiten ejecutar una operación
+// returns true if the bidding price (bid) and the asking price (ask) cross, 
+// which means they allow executing a trade operation.
 bool crosses(Price bid, Price ask);
 
 } //namespace orderbook
