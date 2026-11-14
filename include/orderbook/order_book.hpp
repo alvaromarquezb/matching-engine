@@ -4,14 +4,16 @@
 #include <functional>
 #include <map>
 #include <optional>
+#include <vector>
 
 #include "orderbook/order.hpp"
+#include "orderbook/trade.hpp"
 
 namespace orderbook {
 class OrderBook {
  public:
-  // Adds a resting order to its side of the book, does not match (yet)
-  void add(const Order& order);
+  // Adds a resting order to its side of the book
+  std::vector<Trade> add(const Order& order);
   // Returns the highest buying price or std::nullopt if there are no buy orders
   std::optional<Price> best_bid() const;
   // Returns the lowest asking price or std::nullopt if there are no sell orders

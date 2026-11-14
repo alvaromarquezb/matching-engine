@@ -28,7 +28,7 @@ FetchContent_MakeAvailable(googletest)
 
 #---------- Tests ------------
 enable_testing()
-add_executable(orderbook_tests tests/match_test.cpp tests/order_book_test.cpp)
+add_executable(orderbook_tests tests/match_test.cpp tests/order_book_test.cpp tests/matching_test.cpp)
 target_link_libraries(orderbook_tests PRIVATE orderbook GTest::gtest_main)
 include(GoogleTest)
 gtest_discover_tests(orderbook_tests)
